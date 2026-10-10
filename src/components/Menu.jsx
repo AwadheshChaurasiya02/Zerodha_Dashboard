@@ -30,10 +30,10 @@ const Menu = () => {
   const activeMenuClass = "menu selected";
 
   const signout = async() => {
-      let response = await axios.get("http://localhost:3002/signout");
+      let response = await axios.get("https://zerodha-backend-0nbv.onrender.com/signout");
 
       if(response.data.success){
-        window.location.href = "http://localhost:5173/login";
+        window.location.href = "https://zerodha-frontend-n9tb.onrender.com/login";
       }
   }
 

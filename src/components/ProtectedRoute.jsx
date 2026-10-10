@@ -7,7 +7,7 @@ const [isAuth, setIsAuth] = useState(null);
 
 useEffect(() => {
 axios
-.get("http://localhost:3002/checkAuthentication", {
+.get("https://zerodha-backend-0nbv.onrender.com/checkAuthentication", {
 withCredentials: true,
 headers: {
 "Cache-Control": "no-cache",
@@ -19,7 +19,7 @@ headers: {
 
 useEffect(() => {
 if (isAuth === false) {
-window.location.href = "http://localhost:5173/login";
+window.location.href = "https://zerodha-frontend-n9tb.onrender.com/login";
 }
 }, [isAuth]);
 

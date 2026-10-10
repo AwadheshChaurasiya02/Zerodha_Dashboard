@@ -12,10 +12,10 @@ export const PortfolioProvider = ({ children }) => {
 const refreshPortfolio = async () => {
   try {
     const [positionRes, holdingRes, orderRes,userRes] = await Promise.all([
-      axios.get("http://localhost:3002/positions",{withCredentials:true}),
-      axios.get("http://localhost:3002/holdings",{withCredentials:true}),
-      axios.get("http://localhost:3002/orders",{withCredentials:true}),
-      axios.get("http://localhost:3002/getuser",{withCredentials:true}),
+      axios.get("https://zerodha-backend-0nbv.onrender.com/positions",{withCredentials:true}),
+      axios.get("https://zerodha-backend-0nbv.onrender.com/holdings",{withCredentials:true}),
+      axios.get("https://zerodha-backend-0nbv.onrender.com/orders",{withCredentials:true}),
+      axios.get("https://zerodha-backend-0nbv.onrender.com/getuser",{withCredentials:true}),
     ]);
 
     setPositions(positionRes.data);
