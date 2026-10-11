@@ -40,9 +40,7 @@ const signout = async () => {
     );
 
     if (response.data.success) {
-      window.location.replace(
-        "https://zerodha-frontend-n9tb.onrender.com/login"
-      );
+      window.location.href = "https://zerodha-frontend-n9tb.onrender.com/login";
     }
   } catch (err) {
     console.error("Logout failed:", err);
