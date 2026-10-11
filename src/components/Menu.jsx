@@ -29,13 +29,26 @@ const Menu = () => {
   const menuClass = "menu";
   const activeMenuClass = "menu selected";
 
-  const signout = async() => {
-      let response = await axios.get("https://zerodha-backend-0nbv.onrender.com/signout");
-
-      if(response.data.success){
-        window.location.href = "https://zerodha-frontend-n9tb.onrender.com/login";
+  
+const signout = async () => {
+  try {
+    const response = await axios.get(
+      "https://zerodha-backend-0nbv.onrender.com/signout",
+      {
+        withCredentials: true,
       }
+    );
+
+    if (response.data.success) {
+      window.location.replace(
+        "https://zerodha-frontend-n9tb.onrender.com/login"
+      );
+    }
+  } catch (err) {
+    console.error("Logout failed:", err);
   }
+};
+
 
   return (
     <div className="menu-container">
