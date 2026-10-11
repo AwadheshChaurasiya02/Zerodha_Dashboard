@@ -42,6 +42,7 @@ const signout = async () => {
     console.log("Signout response:", response.data);
 
     if (response.data.success) {
+      console.log("Redirecting to login...");
       window.location.href = "https://zerodha-frontend-n9tb.onrender.com/login";
     }
   } catch (err) {
